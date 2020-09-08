@@ -1,0 +1,21 @@
+version: '3.4'
+services:
+  # docker-compose exec kgs rake console
+  recipes:
+    container_name: recipes
+    build:
+      context: ./recipes
+      dockerfile: ./infra/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./recipes:/recipes
+      - ./recipes/Gemfile:/recipes/Gemfile
+      - ./recipes/Gemfile.lock:/recipes/Gemfile.lock
+      - recipes_gems:/usr/local/bundle/gems
+    environment:
+      PORT: 3000
+      CONTENTFUL_ACCESS_TOKEN: YOUR TOKEN
+      CONTENTFUL_SPACE: YOUR SPACE
+volumes:
+  recipes_gems:
