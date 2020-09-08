@@ -1,0 +1,36 @@
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.7.1'
+
+# Classy web-development dressed in a DSL (official / canonical repo)
+gem 'sinatra'
+
+# A modular Ruby web server interface.
+gem 'rack'
+
+# A lightweight wrapper around the Contentful api gem, to make it behave
+# more like ActiveRecord
+gem 'contentful_model'
+
+# A Ruby gem to load environment variables from `.env`.
+gem 'dotenv'
+
+gem 'github-markup'
+
+group :test do
+  gem 'rack-test'
+  gem 'rspec'
+end
+
+group :development, :test do
+  # Record your test suite's HTTP interactions and replay them during future
+  # test runs for fast, deterministic, accurate tests.
+  gem 'vcr'
+
+  # Library for stubbing and setting expectations on HTTP requests in Ruby.
+  gem 'webmock'
+
+  # A runtime developer console and IRB alternative with powerful introspection capabilities.
+  gem 'pry'
+end

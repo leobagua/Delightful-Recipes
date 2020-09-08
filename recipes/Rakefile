@@ -1,0 +1,12 @@
+# frozen_string_literal: true
+
+require_relative 'config/environment'
+
+desc 'Run sinatra console'
+task :console, :environment do |_t, args|
+  ENV['RACK_ENV'] = args[:environment] || 'development'
+  exec 'irb -r irb/completion -r ./config/environment.rb'
+end
+
+desc 'Run sinatra console shorthand'
+task c: :console
