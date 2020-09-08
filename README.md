@@ -2,13 +2,13 @@
 
 ## Environment
 
-`Ruby version: 2.7.1` 
+Ruby version: 2.7.1
 
-`Sinatra version: 2.0.8.1`
+Sinatra version: 2.0.8.1
 
 ### Instructions
 
-### Running with Docker Compose
+#### Running with Docker Compose
 
 - Set the Contentful credentials at the `docker-compose.yml`:
   - 1.1 `CONTENTFUL_ACCESS_TOKEN`
@@ -34,7 +34,7 @@
   docker-compose exec kgs rake c 
   ```
 
-### Running without Docker
+#### Running without Docker
 
 - Install the dependencies, run:
   ```bash
