@@ -36,9 +36,14 @@
 
 ### Running without Docker
 
-- Make a copy of the `.env.example` file
+- Install the dependencies, run:
   ```bash
   cd recipes
+  bundle
+  ```
+
+- Make a copy of the `.env.example` file
+  ```bash
   cp .env.example .env
   ```
 
