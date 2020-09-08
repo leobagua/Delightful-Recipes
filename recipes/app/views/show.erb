@@ -1,0 +1,32 @@
+<div class="columns is-mobile is-centered">
+  <div class="column is-three-quarters">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-3by2">
+          <img src="<%= @recipe.image_url %>" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-4 mb-2"><%= @recipe.title %></p>
+            <p><small><%= @recipe.calories %> calories</small></p>
+            <p>
+              By Chef
+              <a href="#"><%= @recipe.chef %></a>
+            </p>
+            <div class="tags mt-4 ">
+              <% @recipe.tags.each do |tag| %>
+                <span class="tag is-warning is-uppercase"><%= tag %></span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <%= @recipe.description %>
+        </div>
+        <a href="/" class="button is-small is-text">Back to recipes</a>
+      </div>
+    </div>
+  </div>
+</div>
